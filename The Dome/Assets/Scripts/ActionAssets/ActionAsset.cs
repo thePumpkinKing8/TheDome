@@ -117,7 +117,7 @@ public partial class @ActionAsset: IInputActionCollection2, IDisposable
                     ""path"": ""<Mouse>/leftButton"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""Main"",
                     ""action"": ""Select"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -128,7 +128,7 @@ public partial class @ActionAsset: IInputActionCollection2, IDisposable
                     ""path"": ""<Mouse>/delta"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""Main"",
                     ""action"": ""MouseMove"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false

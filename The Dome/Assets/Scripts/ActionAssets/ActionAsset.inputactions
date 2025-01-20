@@ -95,7 +95,7 @@
                     "path": "<Mouse>/leftButton",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "Main",
                     "action": "Select",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -106,7 +106,7 @@
                     "path": "<Mouse>/delta",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "Main",
                     "action": "MouseMove",
                     "isComposite": false,
                     "isPartOfComposite": false

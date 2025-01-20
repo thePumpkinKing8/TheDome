@@ -10,6 +10,8 @@ public class InputManager : Singleton<InputManager>
 
     #region events
     public UnityEvent<Vector2> PlayerMoveEvent;
+    public UnityEvent PlayerClickEvent;
+    public UnityEvent PlayerDropEvent;
     #endregion
     private void OnEnable()
     {
@@ -21,8 +23,9 @@ public class InputManager : Singleton<InputManager>
             _inputAsset.GamePlay.Enable();
 
             _inputAsset.GamePlay.Move.performed += (val) => PlayerMoveEvent.Invoke(val.ReadValue<Vector2>());
+            _inputAsset.GamePlay.Select.performed += (val) => PlayerClickEvent.Invoke();
+            _inputAsset.GamePlay.Select.canceled += (val) => PlayerDropEvent.Invoke();
         }
     }
- 
 
 }
