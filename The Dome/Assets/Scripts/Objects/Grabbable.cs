@@ -10,23 +10,29 @@ public class Grabbable : MonoBehaviour
     private float _vel;
     private Vector3 _pastPos;
     // Start is called before the first frame update
-    void Start()
+    protected virtual void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
-    void Update()
+    protected virtual void Update()
     {
         if(_grabbed)
         {
-            _pastPos = transform.position;
-            transform.position = new Vector3(Camera.main.ScreenToWorldPoint(Input.mousePosition).x, Camera.main.ScreenToWorldPoint(Input.mousePosition).y, 0);
-            _velector = (transform.position - _pastPos);
-            _vel = (_pastPos - transform.position).magnitude / Time.deltaTime;
-            _velector *= _vel;
+            IsGrabbed();
         }
     }
+
+    protected virtual void IsGrabbed()
+    {
+        _pastPos = transform.position;
+        transform.position = new Vector3(Camera.main.ScreenToWorldPoint(Input.mousePosition).x, Camera.main.ScreenToWorldPoint(Input.mousePosition).y, 0);
+        _velector = (transform.position - _pastPos);
+        _vel = (_pastPos - transform.position).magnitude / Time.deltaTime;
+        _velector *= _vel;
+    }
+
 
     public virtual void GrabStart()
     {

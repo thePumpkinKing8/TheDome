@@ -19,15 +19,12 @@ public class PlayerManager : Singleton<PlayerManager>
         if (_heldObject != null)
             return;
 
-        RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero, Mathf.Infinity);//, LayerMask.NameToLayer("Player"));
+        RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero, Mathf.Infinity, LayerMask.NameToLayer("Grabbable"));
         
         if(hit)
         {
             Debug.Log("hit");
-            if (hit.rigidbody.gameObject.GetComponent<Grabbable>())
-            {
-                SetGrabbedObject(hit.rigidbody.gameObject.GetComponent<Grabbable>());
-            }
+            SetGrabbedObject(hit.rigidbody.gameObject.GetComponent<Grabbable>());           
         }
         
     }
